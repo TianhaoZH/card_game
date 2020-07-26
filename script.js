@@ -168,13 +168,10 @@ function handleGameOver() {
 /******************************************/
 
 
-function setTimeBarBack(){
-  setTimeout(()=>{}, 1000);
-  game.timer = 60;
-  game.timerDisplay.innerHTML = game.timer;
-  game.timerDisplay.style.width = 100+'%';
+function updateScore() {
+  game.score += game.level*2*end;
+  document.getElementsByClassName("game-stats__score--value")[0].innerHTML = game.score;
 }
-
 function updateTimerDisplay() {
   if(end ==0){
     endGame();
